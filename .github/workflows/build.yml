@@ -78,3 +78,31 @@ jobs:
       with:
         name: wdbx-linux-tarball
         path: wdbx_linux_amd64.tar.gz
+
+  release:
+    needs: [build-windows, build-linux]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+    - name: Download Windows Artifact
+      uses: actions/download-artifact@v4
+      with:
+        name: wdbx-windows-installer
+        
+    - name: Download Linux Artifact
+      uses: actions/download-artifact@v4
+      with:
+        name: wdbx-linux-tarball
+        
+    - name: Create GitHub Release
+      uses: softprops/action-gh-release@v2
+      with:
+        tag_name: "v1.0.0-${{ github.run_number }}"
+        name: "WDBX Engine v1.0.0"
+        generate_release_notes: true
+        draft: false
+        prerelease: false
+        files: |
+          wdbx_installer_win64.exe
+          wdbx_linux_amd64.tar.gz
