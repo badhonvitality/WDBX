@@ -1,0 +1,36 @@
+2026-09-25 15:50:53.885 +06 [20124] LOG:  starting PostgreSQL 20devel on x86_64-windows, compiled by gcc-16.2.0, 64-bit
+2026-09-25 15:50:53.889 +06 [20124] LOG:  listening on IPv6 address "::1", port 5433
+2026-09-25 15:50:53.889 +06 [20124] LOG:  listening on IPv4 address "127.0.0.1", port 5433
+2026-09-25 15:50:53.940 +06 [20856] LOG:  database system was shut down at 2026-09-25 15:50:52 +06
+2026-09-25 15:50:53.946 +06 [20124] LOG:  database system is ready to accept connections
+2026-09-25 15:50:57.340 +06 [20124] LOG:  received fast shutdown request
+2026-09-25 15:50:57.345 +06 [20124] LOG:  aborting any active transactions
+2026-09-25 15:50:57.350 +06 [20124] LOG:  background worker "logical replication launcher" (PID 1448) exited with exit code 1
+2026-09-25 15:50:57.355 +06 [22692] LOG:  shutting down
+2026-09-25 15:50:57.356 +06 [22692] LOG:  checkpoint starting: shutdown fast
+2026-09-25 15:50:57.447 +06 [22692] LOG:  checkpoint complete: shutdown fast: wrote 38 buffers (0.2%), wrote 3 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.004 s, sync=0.071 s, total=0.093 s; sync files=36, longest=0.003 s, average=0.002 s; distance=210 kB, estimate=210 kB; lsn=0/017B06B0, redo lsn=0/017B06B0
+2026-09-25 15:50:57.599 +06 [20124] LOG:  database system is shut down
+2026-09-25 15:52:01.288 +06 [23916] LOG:  starting PostgreSQL 20devel on x86_64-windows, compiled by gcc-16.2.0, 64-bit
+2026-09-25 15:52:01.292 +06 [23916] LOG:  listening on IPv6 address "::1", port 5433
+2026-09-25 15:52:01.292 +06 [23916] LOG:  listening on IPv4 address "127.0.0.1", port 5433
+2026-09-25 15:52:01.347 +06 [2668] LOG:  database system was shut down at 2026-09-25 15:50:57 +06
+2026-09-25 15:52:01.356 +06 [23916] LOG:  database system is ready to accept connections
+2026-09-25 15:52:04.565 +06 [23916] LOG:  received fast shutdown request
+2026-09-25 15:52:04.569 +06 [23916] LOG:  aborting any active transactions
+2026-09-25 15:52:04.573 +06 [23916] LOG:  background worker "logical replication launcher" (PID 24876) exited with exit code 1
+2026-09-25 15:52:04.576 +06 [24908] LOG:  shutting down
+2026-09-25 15:52:04.579 +06 [24908] LOG:  checkpoint starting: shutdown fast
+2026-09-25 15:52:04.603 +06 [24908] LOG:  checkpoint complete: shutdown fast: wrote 2 buffers (0.0%), wrote 3 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.011 s, total=0.027 s; sync files=4, longest=0.004 s, average=0.003 s; distance=1 kB, estimate=1 kB; lsn=0/017B0E80, redo lsn=0/017B0E80
+2026-09-25 15:52:04.637 +06 [23916] LOG:  database system is shut down
+2026-09-25 15:52:33.271 +06 [19564] LOG:  starting PostgreSQL 20devel on x86_64-windows, compiled by gcc-16.2.0, 64-bit
+2026-09-25 15:52:33.274 +06 [19564] LOG:  listening on IPv6 address "::1", port 5433
+2026-09-25 15:52:33.274 +06 [19564] LOG:  listening on IPv4 address "127.0.0.1", port 5433
+2026-09-25 15:52:33.325 +06 [13076] LOG:  database system was shut down at 2026-09-25 15:52:04 +06
+2026-09-25 15:52:33.331 +06 [19564] LOG:  database system is ready to accept connections
+2026-09-25 15:52:36.657 +06 [19564] LOG:  received fast shutdown request
+2026-09-25 15:52:36.661 +06 [19564] LOG:  aborting any active transactions
+2026-09-25 15:52:36.665 +06 [19564] LOG:  background worker "logical replication launcher" (PID 6260) exited with exit code 1
+2026-09-25 15:52:36.669 +06 [24900] LOG:  shutting down
+2026-09-25 15:52:36.672 +06 [24900] LOG:  checkpoint starting: shutdown fast
+2026-09-25 15:52:36.732 +06 [24900] LOG:  checkpoint complete: shutdown fast: wrote 24 buffers (0.1%), wrote 3 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.003 s, sync=0.044 s, total=0.063 s; sync files=23, longest=0.003 s, average=0.002 s; distance=122 kB, estimate=122 kB; lsn=0/017CF728, redo lsn=0/017CF728
+2026-09-25 15:52:36.846 +06 [19564] LOG:  database system is shut down

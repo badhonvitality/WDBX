@@ -1,0 +1,5 @@
+# default_version can be 1.0
+comment = 'WDBX Native GeoJSON capabilities'
+default_version = '1.0'
+module_pathname = '$libdir/wdbx_geo'
+relocatable = true

@@ -1,0 +1,5 @@
+# wdbx_ulid extension
+comment = 'Generate ULIDs in WDBX natively'
+default_version = '1.0'
+relocatable = true
+requires = 'pgcrypto'

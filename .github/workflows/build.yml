@@ -1,0 +1,80 @@
+name: WDBX Build & Release
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+    defaults:
+      run:
+        shell: msys2 {0}
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup MSYS2
+      uses: msys2/setup-msys2@v2
+      with:
+        msystem: UCRT64
+        update: true
+        install: >-
+          mingw-w64-ucrt-x86_64-gcc
+          mingw-w64-ucrt-x86_64-meson
+          mingw-w64-ucrt-x86_64-ninja
+          mingw-w64-ucrt-x86_64-pkgconf
+          bison
+          flex
+          perl
+    
+    - name: Build WDBX
+      run: |
+        cd wdbx_engine
+        meson setup build
+        ninja -C build install
+        
+    - name: Build MSI/EXE (Inno Setup)
+      shell: pwsh
+      run: |
+        # Download and install Inno Setup CLI
+        choco install innosetup
+        & "C:\Program Files (x86)\Inno Setup 6\ISCC.exe" wdbx_installer.iss
+        
+    - name: Upload Windows Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: wdbx-windows-installer
+        path: Output/wdbx_installer_win64.exe
+
+  build-linux:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y meson ninja-build gcc flex bison libreadline-dev zlib1g-dev
+        
+    - name: Build WDBX
+      run: |
+        cd wdbx_engine
+        meson setup build
+        ninja -C build install
+        
+    - name: Package Linux Tarball
+      run: |
+        mkdir -p wdbx-linux
+        cp -r wdbx_engine/dist wdbx-linux/
+        cp install.sh wdbx-linux/
+        chmod +x wdbx-linux/install.sh
+        tar -czvf wdbx_linux_amd64.tar.gz wdbx-linux/
+        
+    - name: Upload Linux Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: wdbx-linux-tarball
+        path: wdbx_linux_amd64.tar.gz

@@ -1,0 +1,4 @@
+# wdbx_replication extension
+comment = 'WDBX Native Logical Replication Manager'
+default_version = '1.0'
+relocatable = true

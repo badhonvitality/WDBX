@@ -1,0 +1,5 @@
+# wdbx_cluster extension
+comment = 'WDBX Native Sharding and Cluster Management'
+default_version = '1.0'
+relocatable = false
+requires = 'postgres_fdw'
