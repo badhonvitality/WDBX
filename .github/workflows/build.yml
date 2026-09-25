@@ -33,7 +33,7 @@ jobs:
     - name: Build WDBX
       run: |
         cd wdbx_engine
-        meson setup build --prefix="$PWD/dist"
+        meson setup build --prefix="$PWD/dist" -Dreadline=disabled
         ninja -C build install
         
     - name: Build MSI/EXE (Inno Setup)
