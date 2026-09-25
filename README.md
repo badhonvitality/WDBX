@@ -36,4 +36,5 @@ wdbx postgres -c "CREATE COLLECTION users;"
 Please see our [Contributing Guidelines](CONTRIBUTING.md) and [Code of Conduct](CODE_OF_CONDUCT.md).
 
 ## License
-WDBX is released under the PostgreSQL License.
+WDBX is released under the [MIT License](LICENSE). 
+Copyright (c) 2026 Webda Studio and badhonvitality. All Rights Reserved.
