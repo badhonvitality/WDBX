@@ -33,7 +33,7 @@ jobs:
     - name: Build WDBX
       run: |
         cd wdbx_engine
-        meson setup build
+        meson setup build --prefix="$PWD/dist"
         ninja -C build install
         
     - name: Build MSI/EXE (Inno Setup)
@@ -62,7 +62,7 @@ jobs:
     - name: Build WDBX
       run: |
         cd wdbx_engine
-        meson setup build
+        meson setup build --prefix="$PWD/dist"
         ninja -C build install
         
     - name: Package Linux Tarball
